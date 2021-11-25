@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class >~]lALCandidatesCreateViewEditMarketingEventsCandidateEventPage {
+public class ALCandidatesCreateViewEditMarketingEventsCandidateEventPage {
     public WebDriver ldriver;
     public WebDriverWait wait;
 

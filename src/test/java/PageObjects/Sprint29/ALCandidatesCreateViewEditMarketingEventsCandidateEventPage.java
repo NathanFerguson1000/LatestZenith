@@ -17,7 +17,7 @@ public class ALCandidatesCreateViewEditMarketingEventsCandidateEventPage {
 
     By btnActivityTpe_menu = By.xpath("//div[@data-testid='activity-type']");
 
-    By lnkActivityType_menuitem = By.xpath("//span[contains(text(), 'Spec Digital Passport Sent (ANZ)')]");
+    By lnkActivityType_menuitem = By.xpath("//span[contains(text(), 'Candidate IV')]");
 
 
     //###########################################ACTIONS################################################################

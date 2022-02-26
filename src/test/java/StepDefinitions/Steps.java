@@ -243,12 +243,14 @@ public class Steps {
     @Before
     public void doSomethingBefore(Scenario scenario) {
         if(System.getProperty("env") == null){
-            System.setProperty("env", "dev");
+            System.setProperty("env", "sit");
         }
         System.out.println("Environment set to: " + System.getProperty("env"));
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//Driver/chromedriver_v95.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        String driverpath = System.getProperty("webdriver.chrome.driver");
+        if(driverpath == null){
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//Driver/chromedriver.exe")
+        }
+        
         wait = new WebDriverWait(driver, 30);
         actions = new Actions(driver);
         create_newCandidatePage = new create_NewCandidatePage(driver, wait);
@@ -379,11 +381,11 @@ public class Steps {
 
     @Given("User launch Chrome browser")
     public void user_launch_chrome_browser() {
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//Driver/chromedriver_v95.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-        driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//Driver/chromedriver_v95.exe");
+//         driver = new ChromeDriver();
+//         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+//         driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
+//         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         lp = new CreateNewJobPage(driver);
         ccp = new CreateCandidatesPage(driver);
         cjp = new CreateNewJobPage(driver);
